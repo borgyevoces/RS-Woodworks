@@ -515,13 +515,13 @@ if (isset($_POST['login'])) {
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
   import { getAuth } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
   const firebaseConfig = {
-      apiKey: "AIzaSyDLAeHjSNgW2QmwER9xaPhz1RNo7F5DHyA",
-      authDomain: "rswoodworks-2d7c5.firebaseapp.com",
-      projectId: "rswoodworks-2d7c5",
-      storageBucket: "rswoodworks-2d7c5.appspot.com",
-      messagingSenderId: "631417212663",
-      appId: "1:631417212663:web:d5fd672a9ef930a2ee0df2",
-      measurementId: "G-4GCSDX1NEM"
+      apiKey: "",
+      authDomain: "",
+      projectId: "",
+      storageBucket: "",
+      messagingSenderId: "",
+      appId: "",
+      measurementId: ""
   };
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);

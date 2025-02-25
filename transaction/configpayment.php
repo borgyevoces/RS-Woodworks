@@ -5,7 +5,7 @@ use GuzzleHttp\Client;
 
 function createPayMongoCheckoutSession($amount, $currency, $description) {
     $client = new Client();
-    $apiKey = 'sk_test_9V5nRYTWwwFVTBxFwhtZwYJ3'; // Replace with your PayMongo secret key
+    $apiKey = ''; // Replace with your PayMongo secret key
 
     try {
         $response = $client->request('POST', 'https://api.paymongo.com/v1/links', [

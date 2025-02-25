@@ -141,7 +141,7 @@ try {
         'headers' => [
             'Content-Type' => 'application/json',
             'accept' => 'application/json',
-            'authorization' => 'Basic ' . base64_encode('sk_test_9V5nRYTWwwFVTBxFwhtZwYJ3'), // Your actual API key
+            'authorization' => 'Basic ' . base64_encode(''), // Your actual API key
         ],
     ]);
 

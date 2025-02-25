@@ -1,0 +1,521 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+/* Product row */
+.section-p1 p {
+    margin-bottom: 30px;
+}
+
+#product1 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.pro-container {
+    display: flex;
+    justify-content: space-evenly; /* Adjust spacing to fit 2 products per row */
+    padding-top: 10px;
+    flex-wrap: wrap;
+}
+
+.pro {
+    display: flex;
+    flex-direction: row; /* Change to row to align image and details side by side */
+    align-items: center;
+    border: 1px solid #ccc;
+    background: white;
+    transition: 0.3s ease;
+    width: 30%; /* Adjust width to fit 2 products per row */
+    margin: 14px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden; /* Ensure content stays within the card */
+    padding: 10px; /* Add padding for better spacing */
+}
+
+.pro:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+.pro .image-container {
+    width: 30%; /* Adjust width to fit the new layout */
+    height: 150px; /* Adjust height to fit the new layout */
+    overflow: hidden;
+    border-radius: 10px; /* Adjust border-radius */
+    margin-right: 10px; /* Add margin to separate image from details */
+}
+
+.pro .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the entire image is displayed */
+    transition: transform 0.3s ease;
+}
+
+.pro .image-container img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+.pro .promo-label {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 99, 71, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 12px;
+    z-index: 10;
+}
+
+.pro .des {
+    text-align: left; /* Align text to the left */
+    padding: 10px; /* Reduce padding to decrease space */
+    flex: 1; /* Allow description to take remaining space */
+}
+
+.pro .des span {
+    color: gold;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.pro .des span i {
+    color: gold;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.pro .des h5 {
+    padding-top: 5px; /* Reduce padding to decrease space */
+    color: #1a1a1a;
+    font-size: 16px;
+    font-weight: 550;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.pro .des h5:hover {
+    text-decoration: underline;
+    text-decoration-color: #333;
+    text-decoration-thickness: 1px solid;
+    border-radius: 1px;
+    font-size: 19px;
+}
+
+.pro .des a {
+    text-decoration: none;
+}
+
+.pro .des h4 {
+    font-size: 20px;
+    font-weight: 800;
+    color: black;
+}
+
+.pro .bi-bag-plus-fill {
+    font-size: 25px;
+    cursor: pointer;
+    color: black;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.pro .bi-bag-plus-fill:hover {
+    color: #4651e4;
+    transform: scale(1.2); /* Slightly enlarge on hover */
+}
+
+.pro .fa-heart-o:hover {
+    background: rgba(255, 0, 0, 0.2);
+    padding: 5px;
+    border-radius: 50px;
+    color: #333;
+}
+
+.pro .bi-info-circle-fill:hover {
+    color: #333;
+    font-size: 15px;
+    padding: 3px;
+}
+
+/* Carousel */
+.carousel .slide img {
+    max-width: 50px;
+}
+
+@media (max-width: 768px) {
+    .pro-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; /* Adjust spacing to fit 2 products per row */
+    }
+
+    .pro {
+        flex-basis: 48%; /* Adjust flex-basis to fit 2 products per row */
+        margin: 10px 1%; /* Adjust margin for better spacing */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pro .image-container {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+    }
+
+    .pro .des {
+        text-align: center; /* Center text for better alignment */
+        padding: 10px;
+    }
+
+    #product1 .pro {
+        width: 90%;
+        margin: 10px auto;
+    }
+}
+
+/* Modal styles */
+.modal-container {
+    display: none;
+    position: fixed;
+    z-index: 1050; /* Increase z-index */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.modal-background {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 500px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Page Title */
+.page-title {
+    margin-top: 30px;
+    text-align: center;
+    position: relative;
+    padding: 20px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.page-title h1 {
+    font-size: 35px;
+    font-weight: 700;
+    color: #333333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+}
+
+.page-title p {
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 500;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.page-title::after {
+    content: "";
+    display: block;
+    width: 600px;
+    height: 2px;
+    background-color: #333333;
+    margin: 10px auto;
+    border-radius: 3px;
+}
+
+/* Category Navigation */
+.category-nav {
+    background-color: #f8f9fa;
+    padding: 8px 0; /* Make the category navigation smaller */
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    position: sticky; /* Make the category navigation sticky */
+    top: 110px; /* Stick below the header */
+    z-index: 500; /* Ensure it stays above other content */
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.category-nav .dropdown-toggle {
+    background-color: whitesmoke;
+    color: black;
+    font-size: 18px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+    width: 100%;
+    text-align: center;
+}
+
+.category-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.category-nav li {
+    margin: 0 10px; /* Reduce margin to fit more categories */
+}
+
+.category-nav .nav-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px; /* Reduce font size */
+    font-weight: 500;
+    padding: 8px 12px; /* Reduce padding */
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(135deg, #e9ecef, #f8f9fa);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.category-nav .nav-link:hover {
+    background-color: #007bff;
+    color: royalblue;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .category-nav ul {
+        display: none;
+        flex-direction: column;
+        text-align: left;
+        padding: 0;
+        width: 100%;
+    }
+
+    .category-nav .dropdown-toggle {
+        display: block;
+    }
+
+    .category-nav.show-menu ul {
+        display: flex;
+    }
+
+    .category-nav li {
+        margin: 8px 0;
+    }
+
+    .category-nav .nav-link {
+        font-size: 16px;
+        padding: 12px 18px;
+        display: block;
+    }
+
+    .category-nav .nav-link:hover {
+        background-color: #007bff;
+        color: #fff;
+        box-shadow: none;
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.page-link {
+    margin: 0 5px;
+    padding: 8px 16px;
+    background-color: #f0f0f0;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.page-link.active {
+    background-color: royalblue;
+    color: white;
+    font-weight: bold;
+}
+
+.page-link:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Ensures all carousel images cover the full width and maintain aspect ratio */
+.carousel-img {
+    height: 400px; /* Set a fixed height for all carousel images */
+    width: 100%; /* Ensure the image stretches to the width of the carousel */
+    object-fit: cover; /* Ensure the image covers the entire area while maintaining its aspect ratio */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Add shadow effect around the images */
+}
+
+/* Optional: Adjust the caption if needed */
+.carousel-caption {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle text shadow for better readability */
+}
+
+.carousel-img {
+    height: 400px; /* Set a fixed height for all carousel images */
+    width: 100%; /* Ensure the image stretches to the width of the carousel */
+    object-fit: cover; /* Ensure the image covers the entire area while maintaining its aspect ratio */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Add shadow effect around the images */
+}
+
+/* Make sure carousel controls (prev/next) are visible */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent background to make them stand out */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+/* Optional: Adjust carousel caption for better visibility */
+.carousel-caption {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Adds shadow for text contrast */
+    background: rgba(0, 0, 0, 0.2); /* Semi-transparent dark background for readability */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Buttons visibility and styling */
+.carousel-indicators button {
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white indicator buttons */
+}
+
+.carousel-indicators .active {
+    background-color: #ffffff; /* Active indicator button color */
+}
+
+/* Contact Us Section */
+.contact-us-section {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+    color: #333;
+    margin-bottom: 0; /* Remove margin-bottom */
+    padding-bottom: 0; /* Ensure no extra padding at the bottom */
+}
+
+.contact-us-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-us-section h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.contact-us-section p {
+    font-size: 16px;
+    color: #777;
+}
+
+.contact-info {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h4 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.contact-info ul li {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.contact-info ul li strong {
+    font-weight: bold;
+    color: #0056b3;
+}
+
+.map-container {
+    margin-top: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .contact-us-section .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-us-section .col-md-6 {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .map-container iframe {
+        height: 250px;
+    }
+}
+
+.no-categories-found {
+    text-align: center;
+    font-size: 18px;
+    color: #777;
+    margin-top: 20px;
+}
+
+/* Ensure footer sticks to the bottom */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0; /* Remove default margin */
+}
+
+main {
+    flex: 1;
+    margin-bottom: 0; /* Ensure no extra margin at the bottom */
+}

@@ -1,0 +1,874 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #333;
+}
+
+/* Mobile Header (visible only on small screens) */
+.mobile-header {
+    display: none;
+    background: #2c3e50;
+    color: #ecf0f1;
+    padding: 10px 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+.mobile-header .logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.mobile-header .mobile-toggle-btn {
+    background: none;
+    border: none;
+    color: #ecf0f1;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 240px;
+    height: 100vh;
+    background: #2c3e50;
+    color: #ecf0f1;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+/* Hide sidebar off-canvas when collapsed (mobile view) */
+.sidebar.collapsed {
+    transform: translateX(-100%);
+}
+/* When opened via mobile header, show sidebar */
+.sidebar.active {
+    transform: translateX(0);
+}
+.sidebar .logo {
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: #1a252f;
+    border-bottom: 1px solid rgba(236, 240, 241, 0.1);
+}
+/* Optional close button inside sidebar (visible on mobile) */
+.toggle-btn {
+    background: none;
+    border: none;
+    color: #ecf0f1;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+/* Sidebar Menu */
+.side-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.side-menu li {
+    border-bottom: 1px solid rgba(236, 240, 241, 0.1);
+}
+.side-menu li a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+}
+.side-menu li a:hover,
+.side-menu li a.active {
+    background: #34495e;
+    color: #ecf0f1;
+}
+.side-menu li a i {
+    width: 20px;
+    font-size: 1.1rem;
+}
+.side-menu li a span {
+    margin-left: 10px;
+    white-space: nowrap;
+}
+/* Logout Link */
+.side-menu li.logout a {
+    color: #e74c3c;
+    font-weight: bold;
+}
+.side-menu li.logout a:hover {
+    background: #c0392b;
+}
+/* Spacer for logout */
+.side-menu li.spacer {
+    height: 50px;
+    border: none;
+}
+
+/* Main Content */
+.content {
+    margin-left: 260px;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+.section {
+    display: none;
+}
+.section.active {
+    display: block;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .mobile-header {
+        display: flex;
+    }
+    .sidebar {
+        transform: translateX(-100%);
+    }
+    .content {
+        margin-left: 0;
+    }
+    .toggle-btn {
+        display: block;
+    }
+}
+
+/* Dashboard Section */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.insights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.insight-item {
+    flex: 1;
+    min-width: 200px;
+    background-color: #1976D2;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.insight-item i {
+    font-size: 40px;
+}
+.insight-item .info {
+    text-align: right;
+}
+.insight-item .info h3 {
+    margin: 0;
+    font-size: 24px;
+}
+.insight-item .info p {
+    margin: 0;
+    font-size: 16px;
+}
+
+/* chart design */
+.chart-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 1rem;
+    background-color: #f0f2f5;
+    margin-top: 20px;
+  }
+  .chart {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    flex: 1 1 300px;
+    transition: transform 0.2s ease-in-out;
+  }
+  .chart:hover {
+    transform: translateY(-5px);
+  }
+  .chart h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #333;
+    text-align: center;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #eaeaea;
+  }
+  .chart canvas {
+    margin-top: 1rem;
+    max-width: 100%;
+    height: auto;
+  }
+  /* Size modifiers */
+  .chart.small {
+    max-width: 300px;
+  }
+  .chart.medium {
+    max-width: 450px;
+  }
+  .chart.large {
+    max-width: 65%;
+  }
+  /* Specific chart header borders */
+  .new-user-registrations-chart {
+    border-top: 4px solid rgba(153, 102, 255, 1);
+  }
+  .monthly-revenue-chart {
+    border-top: 4px solid rgba(75, 192, 192, 1);
+  }
+  .total-orders-chart {
+    border-top: 4px solid rgba(255, 99, 132, 1);
+  }
+  .weekly-user-activity-chart {
+    border-top: 4px solid rgba(255, 159, 64, 1);
+  }
+  .top-rated-products-chart {
+    border-top: 4px solid rgba(54, 162, 235, 1);
+  }
+
+/* Orders Section */
+.table-container {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-bottom: 30px;
+}
+.table-header, .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.table-header i, .section-header i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+.table-responsive {
+    overflow-x: auto;
+}
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0;
+}
+.orders-table th, .orders-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    vertical-align: middle;
+    font-size: 0.85rem; /* Adjusted font size */
+}
+.orders-table th {
+    background-color: #f1f3f5;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+.text-center {
+    text-align: center;
+}
+.search-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.search-input {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 250px;
+    max-width: 100%;
+}
+.sorting-container {
+    display: flex;
+    gap: 10px;
+}
+.sorting-container a,
+.sorting-container button {
+    background-color: #1976D2;
+    color: #fff;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.btn {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+    border-radius: 5px;
+}
+.btn-primary {
+    background-color: #1976D2;
+    border: none;
+    color: #fff;
+}
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+    color: #fff;
+}
+.btn-pdf {
+    background-color: #1976D2;
+    color: #fff;
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    padding: 6px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.status {
+    font-weight: bold;
+}
+.status-success {
+    color: limegreen;
+}
+.modal-header.modal-header-light {
+    background-color: #f8f9fa;
+}
+@media (max-width: 576px) {
+    .table-header, .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .sorting-container {
+        margin-top: 10px;
+    }
+    .search-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .search-input {
+        width: 100%;
+    }
+}
+
+
+
+/* Scoped CSS for the Add Product Modal */
+.add-product-modal .modal-content {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: none;
+    overflow: hidden;
+}
+.add-product-modal .modal-header {
+    background: linear-gradient(135deg, #1976D2, #0d47a1);
+    color: #fff;
+    padding: 1rem 1.5rem;
+}
+.add-product-modal .modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.add-product-modal .modal-body {
+    background-color: #f7f7f7;
+    padding: 2rem;
+}
+.add-product-modal .form-label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.add-product-modal .form-control,
+.add-product-modal .form-select {
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+}
+.add-product-modal .btn-success {
+    background-color: #1976D2;
+    border-color: #1976D2;
+    font-size: 1.1rem;
+    padding: 0.75rem;
+    transition: background-color 0.3s ease;
+}
+.add-product-modal .btn-success:hover {
+    background-color: #0d47a1;
+    border-color: #0d47a1;
+}
+
+
+/* Specific Styles for the Products Table */
+.products-table.card {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.products-table .card-header {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 1rem;
+}
+.products-table .card-header h3 {
+    margin: 0;
+    color: #1976D2;
+}
+.products-table .table-responsive {
+    overflow-x: auto;
+}
+.products-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff; /* Set table background to white */
+}
+.products-table table thead th {
+    background-color: #f1f3f5;
+    color: #333;
+    padding: 0.70rem;
+    border: 1px solid #ccc;
+}
+.products-table table tbody td {
+    padding: 0.60rem;
+    border: 1px solid #ccc;
+    vertical-align: middle;
+}
+.products-table .img-thumbnail {
+    border: none;
+    max-width: 70px;
+    max-height: 70px;
+}
+.products-table .stock-control input {
+    max-width: 70px;
+    align-items: center;
+    border-color: #333;
+}
+.products-table .hidden-checkbox {
+    transform: scale(1.3);
+    margin: 0;
+    border-color: #333;
+    align-items: center;
+}
+
+
+/* <!-- Scoped CSS for the Edit Product Modal --> */
+.edit-product-modal .modal-content {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: none;
+    overflow: hidden;
+}
+.edit-product-modal .modal-header {
+    background: linear-gradient(135deg, #1976D2, #0d47a1);
+    padding: 1rem 1.5rem;
+    color: #fff;
+}
+.edit-product-modal .modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.edit-product-modal .modal-body {
+    background-color: #f7f7f7;
+    padding: 2rem;
+}
+.edit-product-modal .form-label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.edit-product-modal .form-control,
+.edit-product-modal .form-select {
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+}
+.edit-product-modal .btn-primary {
+    background-color: #1976D2;
+    border-color: #1976D2;
+    font-size: 1.1rem;
+    padding: 0.75rem;
+    transition: background-color 0.3s ease;
+}
+.edit-product-modal .btn-primary:hover {
+    background-color: #0d47a1;
+    border-color: #0d47a1;
+}
+
+/*Scoped CSS for the Add Category Modal*/
+
+.add-category-modal .modal-content {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.add-category-modal .modal-header {
+    background: linear-gradient(135deg, #1976D2, #0d47a1);
+    color: #fff;
+    padding: 1rem 1.5rem;
+}
+.add-category-modal .modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.add-category-modal .modal-body {
+    background-color: #f7f7f7;
+    padding: 2rem;
+}
+.add-category-modal .form-control {
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+}
+.add-category-modal .btn-primary {
+    background-color: #1976D2;
+    border-color: #1976D2;
+    font-size: 1.1rem;
+    padding: 0.75rem;
+    transition: background-color 0.3s ease;
+}
+.add-category-modal .btn-primary:hover {
+    background-color: #0d47a1;
+    border-color: #0d47a1;
+}
+
+/* category list */
+.category-modal-container,
+.category-confirm-modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+.category-modal-content,
+.category-confirm-modal-content {
+    background: #fff;
+    border-radius: 8px;
+    padding: 0.75rem;
+    width: 70%;
+    max-width: 500px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+.category-close-btn {
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #333;
+}
+/* Modal Headers */
+.category-modal-header,
+.category-confirm-modal-header {
+    background: linear-gradient(135deg, #1976D2, #0d47a1);
+    padding: 0.75rem;
+    border-radius: 8px 8px 0 0;
+    color: #fff;
+    text-align: center;
+    margin: -0.75rem -0.75rem 0.75rem -0.75rem;
+}
+.category-modal-header h2,
+.category-confirm-modal-header h3 {
+    margin: 0;
+}
+/* Table Styling */
+.category-table-wrapper {
+    overflow-x: auto;
+    max-height: 400px; /* Set a max height for the table wrapper */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+.category-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.75rem 0;
+}
+.category-table th,
+.category-table td {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+.category-table th {
+    background-color: #f0f0f0;
+}
+/* Button Styling */
+.category-delete-btn {
+    background-color: #d32f2f;
+    border: none;
+    color: #fff;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.category-delete-btn:hover {
+    background-color: #b71c1c;
+}
+.category-button-group {
+    text-align: center;
+    margin-top: 0.75rem;
+}
+.category-confirm-btn {
+    background-color: #d32f2f;
+    border: none;
+    color: #fff;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+.category-confirm-btn:hover {
+    background-color: #b71c1c;
+}
+.category-cancel-btn {
+    background-color: #757575;
+    border: none;
+    color: #fff;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.category-cancel-btn:hover {
+    background-color: #616161;
+}
+
+/* Admin Chatroom Styles */
+#chat-container {
+    width: 1150px; /* Set width to 1000px for desktop */
+    height: 95vh; /* Fill the entire height */
+    margin: 0 auto; /* Centers the container */
+    background-color: #fdfdfd;
+    border-radius: 5px;
+    box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.15);
+    display: flex;
+    overflow: hidden;
+    border: 1px solid #ccc;
+}
+
+#chat-container #user-list {
+    width: 20%; /* User list occupies 20% of the width */
+    background-color: #2c3e50; /* Darker theme for the user list */
+    color: white;
+    overflow-y: auto;
+    border-right: 1px solid #ddd;
+    padding: 10px;
+}
+
+#chat-container #chat-content {
+    width: 80%; /* Chat content occupies 80% of the width */
+    display: flex;
+    flex-direction: column;
+}
+
+#chat-container .user {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 6px;
+    margin-bottom: 5px;
+}
+
+#chat-container .user img {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid white;
+}
+
+#chat-container .user span {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+#chat-container .user:hover {
+    background-color: #34495e;
+    color: #ecf0f1;
+}
+
+#chat-container #chat-header {
+    background-color: #4a90e2;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #ddd;
+}
+
+#chat-container #chat-box {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #f8f8f8;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#chat-container .message {
+    padding: 12px 16px;
+    border-radius: 15px;
+    max-width: 70%;
+    font-size: 1rem;
+    line-height: 1.5;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#chat-container .message.user {
+    background-color: #dcf8c6;
+    align-self: flex-start;
+    color: #333;
+}
+
+#chat-container .message.admin {
+    background-color: #e6e6e6;
+    align-self: flex-end;
+    color: #333;
+}
+
+#chat-container #chat-input-container {
+    display: flex;
+    padding: 15px;
+    background-color: #f1f3f5;
+    border-top: 1px solid #ddd;
+}
+
+#chat-container #chat-input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+    resize: none;
+    font-size: 1rem;
+    margin-right: 15px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+#chat-container button {
+    width: 60px;
+    height: 60px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: background-color 0.2s ease;
+}
+
+#chat-container button:hover {
+    background-color: #357ab8;
+}
+
+#chat-container .timestamp {
+    font-size: 0.75rem;
+    color: #999;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    #chat-container {
+        width: 580px; /* Set width to 500px for mobile view */
+        flex-direction: column;
+        height: auto;
+    }
+
+    #chat-container #user-list {
+        width: 100%;
+        height: 150px;
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    #chat-container #chat-content {
+        width: 100%;
+    }
+
+    #chat-container .user {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        margin-bottom: 0;
+        border-bottom: none;
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    #chat-container .user img {
+        width: 35px;
+        height: 35px;
+        margin-bottom: 5px;
+    }
+
+    #chat-container .user span {
+        font-size: 0.8rem;
+    }
+
+    #chat-container #chat-header {
+        font-size: 1.2rem;
+        padding: 10px;
+    }
+
+    #chat-container #chat-box {
+        padding: 10px;
+        overflow-y: auto; /* Enable scrolling for chat messages */
+    }
+
+    #chat-container #chat-input-container {
+        padding: 10px;
+    }
+
+    #chat-container #chat-input {
+        font-size: 0.9rem;
+        margin-right: 10px;
+    }
+
+    #chat-container button {
+        width: 50px;
+        height: 50px;
+        font-size: 1rem;
+    }
+    #chat-container .message {
+        padding: 12px 15px;
+        border-radius: 15px;
+        max-width: 60%;
+        font-size: 1rem;
+        line-height: 1.3;
+        position: relative;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+}
+
+
+

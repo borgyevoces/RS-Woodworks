@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+body{
+    margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+    background: whitesmoke;
+
+}
+.container-sm {
+    max-width: 600px;
+    margin-top: 50px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    background: #fff;
+}
+.container-sm h1{
+    color: #1565C0;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.form-group label {
+    font-weight: 500;
+}
+.form-control {
+    border-radius: 5px;
+}
+.btn-primary {
+    width: 100%;
+}
+.btn-secondary {
+    width: 100%;
+    margin-top: 10px;
+}
+.form-control:focus {
+    border-color: #1976D2;
+    outline: none;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: #1976D2;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #1565C0;
+}
+
+.btn-secondary {
+    background-color: #ccc;
+    color: #333;
+}
+
+.btn-secondary:hover {
+    background-color: #bbb;
+}

@@ -1,0 +1,320 @@
+  /* Custom CSS */
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+  body {
+      background-color: #f8f9fa;
+  }
+    /* Define a CSS class for the active button */
+    .active {
+        border: none;
+        border-bottom: 2px #007bff solid ; /* Add a bottom border when active */
+        border-radius: 0;
+    }
+    .btn.active {
+        color: #007bff; /* Change to the desired color for the active state */
+    }
+    
+    #toggleOrdersBtn.btn:hover,
+    #toggleShippedOrdersBtn.btn:hover,
+    #toggleCompletedOrdersBtn.btn:hover {
+    color: #007bff; /* Change to the desired color on hover */
+    }
+
+  .container{
+    width: 100%;
+  }
+
+
+  .profile-img {
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      border: #005cff;
+      
+      
+  }
+
+  /* Card Styling */
+  .profile-card {
+    background: #ffffff;
+    overflow: hidden;
+    position: relative;
+    margin-left: 5px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.profile-header {
+    background: rgb(127, 223, 223);
+    height: 150px;
+    position: relative;
+}
+
+.profile-header .profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid whitesmoke;
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.profile-body {
+    padding: 70px 20px 20px;
+    text-align: center;
+}
+
+.profile-name {
+    font-size: 22px;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 5px;
+}
+
+.profile-username {
+    font-size: 16px;
+    color: #777777;
+    margin-bottom: 15px;
+}
+
+.profile-info {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    font-size: 14px;
+    color: #555555;
+    
+}
+
+.profile-info li {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align items horizontally */
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: background 0.3s ease;
+    font-size: 14px;
+    height: 100%;
+}
+
+.profile-info li:hover {
+    background: #f1f1f1;
+}
+
+.profile-info i {
+    font-size: 24px; /* Larger icon size */
+    color: #005cff;
+    margin-bottom: 8px; /* Space between icon and label */
+}
+
+.profile-info span {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 5px; /* Space between label and paragraph */
+    text-align: center; /* Center text in the span */
+}
+
+.profile-info p {
+    margin: 0;  /* Remove margin for paragraphs */
+    font-size: 14px;
+    color: #333;  /* Darker color for the paragraph text */
+    text-align: center; /* Center text in the paragraph */
+}
+
+
+.profile-actions {
+    margin-top: 20px;
+}
+
+.profile-actions .btn {
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.profile-actions .btn:hover {
+    transform: scale(1.05);
+}
+
+/* Profile header container */
+
+
+/* Edit icon */
+.edit-icon {
+    display: none;
+    position: absolute;
+    top: 83%; /* Move down by 50% of the parent height */
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #ffffff;
+    background: rgba(0, 0, 0, 0.5); /* Dark background to highlight the icon */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    opacity: 0; /* Make the icon invisible by default */
+    transition: opacity 0.3s ease-in-out;
+    transform: translateX(-50%) translateY(-50%); /* Center horizontally and vertically */
+}
+
+
+/* Show the edit icon when hovering over the profile image */
+.profile-header:hover .edit-icon {
+    opacity: 1; /* Show the icon */
+}
+
+  /* Order Item Styling */
+  .order-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-left: 10px;
+      width: 98%;
+  }
+
+  .order-image {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      margin-left: 10px;
+      
+  }
+
+  .order-details {
+      flex-grow: 1;
+      padding: 15px;
+  }
+
+  .order-name {
+      margin-top: 0;
+      font-size: 18px;
+      color: #333;
+  }
+
+  .order-price,
+  .order-quantity,
+  .order-total {
+      margin: 5px 0;
+      font-size: 16px;
+
+  }
+
+  .order-total {
+      font-weight: 700;
+      color: #333; /* Vibrant color */
+  }
+  /* Animation */
+  @keyframes slideIn {
+      from {
+          opacity: 0;
+          transform: translateY(-50px);
+      }
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+
+  .animated {
+      animation: slideIn 0.5s forwards;
+  }
+  .empty-image img{
+      width: 300px; 
+      height: 300px;
+  }
+
+  .order-date{
+      width: auto;
+      border-radius: 2px;
+      border: 1px solid #007bff;
+      align-items: center;
+      padding-top: 5px 5px 5px 5px;
+      margin-left: 10px;
+      width: 98%;
+  }
+  .order-date p{
+      margin-top: 5px;
+      margin-bottom: 10px;
+      font-size: 18px;
+      font-weight: 400;
+  }
+  .order-date .bi{
+      font-size: 25px;
+      margin-left: 15px;
+      margin-right: 10px;
+      color: #007bff;
+      font-weight: bold;
+  }
+  .order-date span{
+      font-weight: 500;
+      font-size: 19px;
+  }
+  .order-details {
+      position: relative;
+  }
+
+  .order-details button {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin-bottom: 10px; /* Adjust as needed */
+      margin-right: 10px; /* Adjust as needed */
+      background: #007bff;
+      border: none;
+      color: white;
+      padding: 8px;
+      border-radius: 5px;
+  }
+  .order-details button:hover{
+      background: #005cff;
+  }
+
+  /* Cancel Order Specific Modal Styles */
+.cancel-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.cancel-modal-content {
+    text-align: center;
+}
+
+.cancel-modal button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#confirmCancelOrderBtn {
+    background-color: #f44336;
+    color: white;
+}
+
+#closeCancelOrderConfirmModal, #closeCancelOrderSuccessModal {
+    background-color: #333;
+    color: white;
+}
+
+

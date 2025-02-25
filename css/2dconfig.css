@@ -1,0 +1,484 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+body{
+    margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+#config{
+    display: flex;
+    justify-content:flex-start;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.container {
+    display:flex;
+    justify-content: space-between;
+    width: 100vw; /* 100% of the viewport width */
+}
+
+.left-container {
+    flex: 0 0 auto; /* Make the left container not grow or shrink */
+}
+
+.right-container {
+    flex: 1; /* Make the right container take up remaining space */
+    padding-right: 0; /* Add padding to the right */
+    margin-right: 15px;
+ 
+}
+.right-container h1{
+    margin-bottom: 40px;
+    color: #333;
+    font-size: 40px;
+}
+
+.image-container {
+    display: flex;
+    width: 650px; /* Set the desired width */
+    height: 500; /* Set the desired height */
+    overflow:hidden; /* Ensure the overflow is hidden to prevent the image from overflowing */
+}
+.image-container:hover #canvas {
+    transform: scale(1.3); /* Zoom in on hover */
+    overflow: hidden; /* Ensure the overflow is hidden to prevent the image from overflowing */
+}
+/*  options */
+
+.design-options {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    
+}
+
+.design-option {
+    margin-right: 10px; /* Adjust as needed */
+}
+
+.design-option img {
+    width: 39px; /* Adjust image width */
+    height: auto;
+    border: none;
+}
+.color-options {
+    display: flex;
+    flex-direction: row;
+}
+.color-option {
+    margin-right: 10px; /* Adjust as needed */
+    
+}
+
+.color-option img {
+    width: 50px; /* Adjust image width */
+    height: auto;
+    padding: 2px 2px 2px 2px;
+}
+
+.options-container .color-option {
+    width: auto; /* Adjust the width of the options container */
+    
+}
+.options-container h1{
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font-weight: 200;
+    color: #333;
+}
+/* canvas */
+#canvas {
+    display: block; /* Make the canvas a block-level element */
+    margin-top: 50px;
+}
+.image-container {
+    position: relative;
+    margin-bottom: 70px;
+
+}
+.canvas {
+    cursor: pointer; /* Change cursor to indicate interactivity */
+    transition: transform 0.5s ease; /* Add transition for smooth zoom effect */
+}
+
+
+
+.design-option,
+.color-option {
+    display: flex;
+    margin-bottom: 10px; /* Adjust spacing between rows */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    
+}
+
+.color-options span,
+.design-options span{
+    font-size: 11px;
+    font-weight: 500;
+    padding: 1px 1px 1px 1px;
+    overflow: hidden; /* Ensure the overflow is hidden to prevent the image from overflowing */
+    margin-right: 5px;
+    margin-left: 5px;
+
+}
+
+.color-option:hover,
+.design-option:hover,
+.size-option:hover {
+    border-color: blue;
+    background: #ccc;
+
+}
+
+.selected-color,
+.selected-design,
+.selected-size {
+    border-color:  rgb(34, 34, 249) !important;
+}
+
+.color-options img,
+.design-options img  {
+    max-width: 40px; /* Adjust the width of the option images */
+    max-height: 40px;
+    margin: 0 auto; /* Center the image horizontally */
+    border-radius: 50%;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+    
+}
+
+.selected-color,
+.selected-design,
+.size-option {
+    border: 1px solid rgb(34, 34, 249); /* Add a border to indicate selection */
+
+}
+
+/* label */
+.label{
+    font-size: 20px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+.label span{
+    font-style: oblique;
+    font-size: 13px;
+    color: #333;
+    font-weight: 400;
+    margin-left: 14px;
+}
+.label h4{
+    font-size: 15px;
+    font-weight: 700;
+    color: gray;
+ 
+}
+
+/* Style the select element */
+#size {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 1px solid #fff; /* Add border */
+    border-radius: 5px; /* Add border radius */
+    padding: 8px 15px; /* Add padding */
+    background-color: #fff; /* Add background color */
+    cursor: pointer;
+    font-size: 16px;
+    color: #333; /* Text color */
+}
+
+
+.size-options {
+    display: flex;
+    gap: 10px; /* Adjust the gap between buttons */
+    
+  
+}
+
+.size-options button {
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 5px; /* Add border radius */
+    padding: 8px 10px 12px; /* Add padding */
+    background-color: #fff; /* Add background color */
+    cursor: pointer;
+    font-size: 13px;
+    color: #333; /* Text color */
+    text-align: center;
+    width: 100%;
+}
+
+.size-options button:hover,
+.color-option button:hover,
+.design-option button:hover{
+    background-color: #f0f0f0; /* Change background color on hover */
+}
+
+.size-options button:focus {
+    border-color:  rgb(34, 34, 249); /* Change border color on focus */
+}
+
+.custom-details{
+    flex-direction: column;
+    
+}
+.custom-details h4{
+    font-size: 30px;
+    margin-top: 60px;
+}
+.custom-details input{
+    width: 50px;
+    height: 46px;
+    padding-left: 15px;
+    margin-bottom: 14px;
+    padding-top: 0;
+    padding-bottom: 0;
+    
+}
+.custom-details span{
+    font-size: 40px;
+    margin-right: 20px;
+    font-weight: bolder;
+   
+}  
+.custom-details p{
+    font-size: 15px;
+    font-weight: 300;
+    color: #333;
+    font-style: oblique;
+}
+
+.custom-details button{
+    border-radius: 3px;
+    background-color: black;
+    width: 182px;
+    height: 50px;
+    color: white;
+    font-size: 19px;
+    position: relative;
+    font-weight: 700;
+    border: 1px solid #ffffff;
+    margin-top: 12px;
+    border-radius: 4px;
+}
+.custom-details i{
+    margin-right: 10px;
+    font-size: 20px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+.custom-details button:hover{
+    background: #ccc;
+    color: #333;
+    text-align: center;
+}
+
+/* table */
+/* Style for the table container */
+.table-container {
+    margin-top: 5px; /* Remove margin on top */
+}
+
+/* Style for the table */
+.table-container table {
+    width: 95%;
+    border-collapse: collapse;
+}
+
+/* Style for table header */
+.table-container th {
+    border-top: none; /* Remove top border */
+    border-bottom: 1px solid #ddd; /* Add bottom border */
+    background-color: #ccc;
+    text-align: left;
+    padding: 8px;
+}
+
+/* Style for table body */
+.table-container td {
+    border-top: none; /* Remove top border */
+    border-bottom: 1px solid #ddd; /* Add bottom border */
+    padding: 8px;
+}
+
+/* Remove side borders for the first and last cells in each row */
+.table-container td:first-child,
+.table-container td:last-child,
+.table-container th:first-child,
+.table-container th:last-child {
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Remove side borders for the first and last rows */
+.table-container tr:first-child td,
+.table-container tr:last-child td,
+.table-container tr:first-child th,
+.table-container tr:last-child th {
+    border-bottom: none;
+    border-bottom: 1px solid #ddd;
+}
+.table-container span{
+    text-align: right;
+    color:#333;
+    font-size: 15px;
+    font-style: oblique;
+    font-weight: 400;
+    margin-left: 5px;
+
+}
+.table-container td{
+    font-weight: 700;
+    color: black;
+    font-size: 16px;
+}
+
+/* dimension */
+.dimension-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.dimension-container .dimension {
+    width: calc(33.33% - 20px);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.dimension-container .dimension label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.dimension-container .dimension input {
+    width: 90%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+    text-align: center;
+}
+
+.dimension-container .dimension input:focus {
+    border-color: rgb(34, 34, 249);
+    outline: none;
+}
+
+
+#faq {
+    text-align: center; /* Center-align the content */
+}
+
+.faqimage {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    margin-bottom: 20px; /* Add some spacing */
+    margin-top: 40px;
+    border-top: 1px solid #ccc;
+}
+
+.faqimage p {
+    margin-top: 10px; /* Add some spacing between the image and the text */
+    font-size: 30px;
+    font-weight: 500;
+    color:#333;
+}
+/* Adjustments for mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .left-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .image-container {
+        max-width: 80%; /* Adjust as needed */
+    }
+
+    .container {
+        flex-direction: column; /* Stack containers vertically on smaller screens */
+    }
+
+    .left-container,
+    .right-container {
+        width: 100%; /* Set width to 100% for both containers */
+        margin: 0; /* Remove margin */
+        padding: 0; /* Remove padding */
+    }
+
+    .right-container {
+        margin-top: 20px; /* Add spacing between left and right containers */
+    }
+
+    .image-container {
+        margin-bottom: 20px; /* Adjust margin */
+    }
+
+    #canvas {
+        width: 100%; /* Set canvas width to 100% */
+        height: auto; /* Allow canvas height to adjust automatically */
+        max-width: 100%; /* Ensure the canvas doesn't exceed the screen width */
+        max-height: 50vh; /* Set maximum height relative to the viewport height */
+        margin-top: 20px; /* Adjust top margin */
+        margin-bottom: 20px; /* Adjust bottom margin */
+    }
+
+    .table-container {
+        margin-left: 0; /* Remove left margin */
+    }
+
+    .size-options button,
+    .color-option,
+    .design-option {
+        width: auto; /* Set width to 100% for options */
+        margin-left: 5px; /* Remove right margin */
+        margin-bottom: 10px; /* Adjust bottom margin */
+        border-radius: 5px;
+        padding: 4px;
+        height: 50%;
+        
+    }
+
+    .custom-details h4 {
+        margin-top: 30px; /* Adjust margin */
+    }
+
+    .custom-details input {
+        width: 100%; /* Set width to 100% for input */
+    }
+     /* Move the options container below the image container */
+     .options-container {
+        width: 100%;
+        margin-top: 20px; /* Adjust spacing */
+    }
+
+    /* Set options container to flex direction column */
+    .options-container .size-options,
+    .options-container .color-options,
+    .options-container .design-options {
+        flex-direction: column;
+    }
+
+    /* Adjust styles for individual options */
+    .options-container .size-options button,
+    .options-container .color-option,
+    .options-container .design-option {
+        width: auto;
+        margin: 0;
+    }
+}
+
+
+

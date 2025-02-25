@@ -1,0 +1,1091 @@
+
+
+#prodetails {
+    display: flex;
+    gap: 70px;
+    padding: 50px 100px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Product Image Section */
+.single-pro-img {
+    position: relative;
+    width: 55%;
+}
+
+#MainImg {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-top: 60px;
+}
+
+#MainImg:hover {
+    transform: scale(1.05);
+}
+
+/* Small Images Group */
+.small-img-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.small-img-col {
+    width: 18%;
+}
+
+.small-img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.small-img:hover {
+    transform: scale(1.05);
+}
+
+/* Product Details Section */
+.single-pro-details {
+    width: 70%;
+    padding: 10px;
+}
+
+/* Text Styling */
+.category-title {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.product-name {
+    font-size: 30px;
+    font-weight: 600;
+    color: #333;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.total-reviews span {
+    color: #777;
+    font-size: 16px;
+}
+
+.product-price {
+    font-size: 28px;
+    font-weight: 700;
+    color: #e91e63;
+    margin: 20px 0;
+}
+
+.product-actions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.quantity-input {
+    width: 60px;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.add-to-cart-btn {
+    padding: 12px 20px;
+    background-color: royalblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    width: 80px;
+}
+
+.add-to-cart-btn i{
+    font-size: 20px;
+}
+
+.add-to-cart-btn:hover {
+    background-color: gray;
+    color: white;
+}
+
+.checkout-btn {
+    padding: 12px 20px;
+    background-color: royalblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.checkout-btn:hover {
+    background-color: gray;
+    color: white;
+}
+
+.product-info {
+    margin-top: 30px;
+    font-size: 20px;
+    color: #555;
+    font-style: oblique;
+}
+
+.product-description {
+    display: block;
+    margin: 5px 0;
+    line-height: 1.6;
+}
+
+/* Social Share */
+.social-share {
+    margin-top: 20px;
+}
+
+.social-share p {
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+.social-btn {
+    padding: 10px 20px;
+    background-color: #ddd;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.social-btn i {
+    margin-right: 8px;
+}
+
+.social-btn:hover {
+    background-color: #888;
+}
+
+.facebook-btn {
+    background-color: #3b5998; /* Facebook blue */
+}
+
+.instagram-btn {
+    background-color: #e4405f; /* Instagram gradient start */
+}
+
+.twitter-btn {
+    background-color: #1da1f2; /* Twitter blue */
+}
+
+.facebook-btn:hover {
+    background-color: #2d4373; /* Darker Facebook blue */
+}
+
+.instagram-btn:hover {
+    background-color: #d62976; /* Darker Instagram color */
+}
+
+.twitter-btn:hover {
+    background-color: #0d95e8; /* Darker Twitter blue */
+}
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    #prodetails {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 40px; /* Reduced padding for tablets */
+    }
+
+    .single-pro-img, .single-pro-details {
+        width: 100%;
+    }
+
+    #MainImg {
+        width: 100%;
+        max-width: 500px; /* Ensure the image doesn't overflow */
+    }
+
+    .small-img-group {
+        justify-content: center; /* Center small images */
+        gap: 15px;
+    }
+
+    .small-img-col {
+        width: 20%;
+    }
+
+    .product-name {
+        font-size: 24px; /* Slightly smaller font size */
+    }
+
+    .product-price {
+        font-size: 22px; /* Smaller font size */
+    }
+
+    .product-actions {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px;
+    }
+
+    .quantity-input, .add-to-cart-btn, .checkout-btn {
+        width: 100%; /* Full width for mobile */
+    }
+
+    .social-btn {
+        font-size: 14px; /* Smaller font size */
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    #prodetails {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px; /* Further reduced padding for mobile */
+    }
+
+    .single-pro-img, .single-pro-details {
+        width: 100%;
+    }
+
+    #MainImg {
+        width: 100%;
+        max-width: 550; /* Resize image for small devices */
+    }
+
+    .small-img-group {
+        flex-direction: row;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .small-img-col {
+        width: 30%; /* Adjust for better stacking of images */
+    }
+
+    .product-name {
+        font-size: 20px; /* Reduce font size further for mobile */
+    }
+
+    .product-price {
+        font-size: 20px;
+    }
+
+    .product-actions {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .quantity-input, .add-to-cart-btn, .checkout-btn {
+        width: 100%; /* Full width for mobile */
+    }
+
+    .social-btn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+
+  /* Modal styles */
+.modal-container {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.modal-background {
+    background-color: rgba(0, 0, 0, 0.5); 
+    width: 100%;
+    height: 100%;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    position: absolute;
+    left: 50%; 
+    top: 50%; 
+    transform: translate(-50%, -50%);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* Review Section */
+#reviewSection {
+    margin-top: 30px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+.review-form-container {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.review-form-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.rating-container {
+    margin-bottom: 20px;
+}
+
+.rating-label {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.star-rating {
+    direction: rtl;
+    display: inline-flex;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    font-size: 25px;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.star-rating label::before {
+    content: '★';
+}
+
+.star-rating input:checked ~ label,
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+    color: #ffd700; /* Gold color on hover and checked */
+}
+
+.review-textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    resize: none;
+}
+
+.submit-review-btn {
+    padding: 10px 20px;
+    background-color: royalblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-review-btn:hover {
+    background-color: #004d40;
+}
+
+.customer-reviews-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 20px 0; /* Combined margin top and bottom */
+}
+
+.reviews-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.single-review:last-child {
+    border-bottom: none;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.review-user-info {
+    display: flex;
+    align-items: center;
+}
+
+.review-user-image {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.review-username {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between; /* This keeps the username and rating on opposite sides */
+    align-items: center;
+    margin-bottom: 10px; /* Optional: add some space below the header */
+}
+
+.review-rating {
+    font-size: 18px; /* Adjust size as needed */
+    color: #ffd700; /* Gold color for stars */
+    margin-left: auto; /* This pushes the rating to the right */
+}
+
+.single-review {
+    position: relative;
+    padding: 10px;
+    border: 1px solid #ddd; /* Optional: to separate reviews visually */
+    margin-bottom: 10px; /* Space between reviews */
+}
+
+.review-actions {
+    position: absolute;
+    bottom: 10px; /* Adjust this value as needed */
+    right: 10px; /* Adjust this value as needed */
+}
+
+.review-text {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.review-date {
+    font-size: 14px;
+    color: #999;
+    margin-top: 10px;
+}
+
+.review-media {
+    margin-top: 10px;
+}
+
+.review-image {
+    max-width: 10px; /* Make images responsive */
+    border-radius: 3px;
+    margin: 10px 0; /* Space above and below */
+}
+
+.review-video {
+    width: 200px; /* Make the video responsive */
+    max-height: 200px; /* Set a maximum height */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+
+/* Icon buttons for editing and deleting reviews */
+.edit-review-btn,
+.delete-review-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.edit-review-btn i,
+.delete-review-btn i {
+    font-size: 18px;
+    color: gray;
+}
+
+.edit-review-btn:hover i,
+.delete-review-btn:hover i {
+    color: royalblue;
+}
+
+/* File Upload Styles */
+.file-upload-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.file-input {
+    display: none; /* Hide the default file input */
+}
+
+.file-upload-label {
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #007bff;
+    transition: background-color 0.3s;
+}
+
+.file-upload-label:hover {
+    background-color: #f1f1f1;
+}
+
+/* Total reviews */
+.total-reviews {
+    font-size: 16px; /* Adjust size as needed */
+    color: #666; /* Change color as desired */
+    margin-top: 10px; /* Space above the reviews text */
+}
+
+.average-rating {
+    font-size: 20px; /* Adjust size as needed */
+    color: #ffd700; /* Gold color for stars */
+    font-weight: bold;
+    
+}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 999; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0,0,0,0.4); /* Black background with opacity */
+    overflow: auto; /* Enable scroll if needed */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fff;
+    margin: auto; /* Center the modal horizontally */
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 90%; /* Full width, but can be adjusted */
+    max-width: 600px; /* Maximum width for larger screens */
+    position: absolute; /* Positioning */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Close Button (top-right corner) */
+.close-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Styling the edit review form */
+.edit-review-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.edit-review-form label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #555;
+}
+
+.edit-review-form select,
+.edit-review-form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    font-size: 14px;
+    font-family: 'Arial', sans-serif;
+}
+
+.edit-review-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Styling the submit button */
+.edit-review-form button {
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.edit-review-form button:hover {
+    background-color: #218838;
+}
+
+
+/* Star rating system */
+.star-rating {
+    direction: rtl;
+    font-size: 0;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    font-size: 25px;
+    color: #ddd;
+    cursor: pointer;
+    display: inline-block;
+    padding: 4px;
+    margin-top: 20px;
+}
+
+.star-rating input:checked ~ label {
+    color: #f5c518;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+    color: #f5c518;
+}
+
+/* Confirmation Modal Styles */
+.confirmation-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay for emphasis */
+}
+
+/* Modal Content */
+.confirmation-modal-content {
+    background-color: #ffffff; /* White background */
+    margin: 15% auto; /* Centered with a margin from top */
+    padding: 30px; /* Increased padding for better spacing */
+    border: none; /* Remove border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    width: 90%; /* Responsive width */
+    max-width: 400px; /* Max width for larger screens */
+    text-align: center; /* Center text */
+    animation: fade-in 0.3s ease; /* Animation for modal appearance */
+}
+
+/* Modal Title */
+.confirmation-modal h2 {
+    font-size: 24px; /* Larger title */
+    margin-bottom: 10px; /* Space below title */
+    color: #333; /* Dark gray for text */
+}
+
+/* Modal Text */
+.confirmation-modal p {
+    font-size: 16px; /* Readable font size */
+    color: #555; /* Medium gray */
+    margin-bottom: 20px; /* Space below text */
+}
+
+/* Button Container */
+.confirmation-buttons {
+    display: flex; /* Flexbox for alignment */
+    justify-content: center; /* Center buttons */
+    gap: 15px; /* Space between buttons */
+}
+
+/* Button Styles */
+.confirm-delete-btn, .cancel-delete-btn {
+    padding: 12px 24px; /* Increased padding */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    font-size: 16px; /* Font size for buttons */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+}
+
+/* Confirm Delete Button */
+.confirm-delete-btn {
+    background-color: #d32f2f; /* Darker red for emphasis */
+    color: white; /* White text */
+    border: none;
+}
+
+/* Cancel Button */
+.cancel-delete-btn {
+    background-color: lightgreen; /* Light gray */
+    color: black; /* Black text */
+    border: none;
+}
+
+/* Button Hover Effects */
+.confirm-delete-btn:hover {
+    background-color: #b71c1c; /* Dark red on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.cancel-delete-btn:hover {
+    background-color: #bdbdbd; /* Darker gray on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Close Button */
+.close-modal {
+    color: #aaa; /* Gray color */
+    float: right; /* Align right */
+    font-size: 28px; /* Font size */
+    font-weight: bold; /* Font weight */
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: black; /* Change color on hover */
+    text-decoration: none; /* Remove underline */
+    cursor: pointer; /* Pointer cursor */
+}
+
+/* Keyframes for Modal Fade In */
+@keyframes fade-in {
+    from {
+        opacity: 0; /* Start invisible */
+        transform: translateY(-10px); /* Slide in from the top */
+    }
+    to {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); /* End position */
+    }
+}
+
+
+/* Modal Fade-In Animation */
+@keyframes modalfadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 20% auto;
+    }
+
+    .modal-content button {
+        width: 100%;
+    }
+    
+    .review-image {
+        max-width: 100%; /* Responsive images */
+    }
+}
+
+
+/* Checkout Modal Styles */
+#checkoutModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1050; /* Display above other content */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+    display: flex; /* Use flexbox */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* Modal Content Box */
+#checkoutModal .modal-content {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%; /* Adjust modal width */
+    max-width: 500px;
+    max-height: 100%;
+    position: relative;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    overflow-y: auto; /* Allow vertical scrolling if content exceeds height */
+}
+
+/* Close Button */
+#checkoutModal .close {
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#checkoutModal .close:hover {
+    color: #ff4d4d;
+}
+
+/* Product Image */
+#checkoutModal #modalProductImage {
+    max-width: 100px;
+    width: auto;
+    height: auto;
+    margin: 10px auto;
+    display: block;
+    border-radius: 5px;
+}
+
+/* Product Name */
+#checkoutModal #modalProductName {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Quantity Control */
+#checkoutModal .quantity-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+#checkoutModal .quantity-control button {
+    background-color: royalblue;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+@media (max-width: 768px) {
+    #checkoutModal .quantity-control {
+        flex-direction: flex;
+        gap: 5px;
+    }
+
+    #checkoutModal .quantity-control button {
+        width: 10%;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    #checkoutModal .quantity-control input {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+    }
+}
+
+#checkoutModal .quantity-control button:hover {
+    background-color: royalblue;
+}
+
+#checkoutModal .quantity-control input {
+    width: 50px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+/* Delivery Options */
+#checkoutModal .delivery-options {
+    margin: 20px 0;
+    font-size: 14px;
+}
+
+#checkoutModal .delivery-options h5 {
+    font-size: 18px;
+    color: royalblue;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#checkoutModal .delivery-option {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 10px 0;
+    align-items: center;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s;
+}
+
+#checkoutModal .delivery-option:hover {
+    background-color: #f0f8ff;
+}
+
+#checkoutModal .delivery-option input {
+    margin-right: 8px;
+}
+
+/* Totals Section */
+#checkoutModal .subtotal,
+#checkoutModal .delivery-fee,
+#checkoutModal .total-amount {
+    margin: 10px 0;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#checkoutModal .total-amount {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Proceed Button */
+#checkoutModal form button {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    background-color: royalblue;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#checkoutModal form button:hover {
+    background-color: royalblue;
+}
+
+/* Delivery Address Section */
+.delivery-address {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.delivery-address h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    border-bottom: 2px solid royalblue;
+    padding-bottom: 5px;
+}
+
+.current-address {
+    margin-bottom: 15px;
+}
+
+.current-address h3 {
+    font-size: 18px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.current-address h3 i {
+    margin-right: 8px;
+    color: royalblue;
+}
+
+.current-address p {
+    font-size: 16px;
+    color: #777;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.change-address {
+    text-align: right;
+}
+
+.change-address a {
+    text-decoration: none;
+    padding: 8px 15px;
+    background-color: #1976D2;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.change-address a:hover {
+    background-color: #145ca8;
+}

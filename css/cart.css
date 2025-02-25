@@ -1,0 +1,624 @@
+/* empty cart css */
+.empty-cart h1{
+    margin-top: 20px;
+    color: #333;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 600;
+  
+  }
+  .empty-cart {
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+  }
+  .button-container button{
+    border-radius: 10px;
+    background-color: #4651e4;
+    width: 100px;
+    height: 45px;
+    color: white;
+    font-size: 15px;
+    position: relative;
+    font-weight: 500;
+    border: 1px solid darkgray;
+    margin-bottom: 90px;
+    margin-top: 20px;
+  }
+  .button-container button:hover{
+    background: #515cf8;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .empty-cart img {
+    width: 350px;
+    margin-top: 40px;
+  }
+  
+  .remove-cart-btn{
+    border: none; 
+    color: #333;
+    background: none;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .remove-button-container:hover{
+    background: #ccc;
+    border-radius: 45px;
+    width: 65px;
+  }
+  
+  .update-button-container {
+    display: flex;
+    justify-content: flex-end;
+   
+  }
+  .remove-button-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 55px;
+  }
+  
+  .update-button-container .update-cart-btn:hover {
+    background-color: gray;
+    color: #fff;
+  }
+  .update-cart-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 8px 8px 8px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-right: 70px;
+    font-size: 13px;
+    font-weight: 500;
+    
+  }
+  
+  
+  /* POPUP CSS */
+  
+  /* sign-in popup */
+  #popup-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(245, 238, 238);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    width: 600px; /* Adjust the width as needed */
+    height: 400px; /* Adjust the height as needed */
+    z-index: 1000;
+    text-align: center; /* Center align text */
+    border: none;
+  }
+  
+  #close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  #popup-modal h2 {
+    margin-top: 20px;
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: #333;
+  }
+  
+  #popup-modal p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: 400; 
+  }
+  
+  #popup-modal button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  #popup-modal img{
+    width: 300px;
+    height: 200px;
+  }
+  
+  #popup-modal button#login-btn,
+  #popup-modal button#signup-btn{
+    background-color: #4651e4;
+    color: #fff;
+    margin-right: 10px;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  
+  
+  #popup-modal button#signup-btn:hover,
+  #popup-modal button#login-btn:hover{
+    background: #5963f2;
+    color: #fff;
+    font-size: 17px;
+  }
+  
+  /* transaction popup */
+  .transac-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: whitesmoke;
+    padding: 50px; /* Increase padding for more space */
+    border-radius: 10px; /* Adjust border-radius for rounded corners */
+    z-index: 1000; /* Ensure it appears above other elements */
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    width: 700px; /* Adjust width as needed */
+    max-width: 1000px; /* Set maximum width to prevent it from becoming too wide */
+    height: 350px; /* Let the height adjust based on content */
+  }
+  
+  .popup-content {
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  .popup-image {
+    text-align: center;
+  }
+  
+  .popup-image img {
+    width: 250px; /* Adjust image size as needed */
+    height: 160px; /* Maintain aspect ratio */
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+  .popup-image .pay-btn {
+    width: 200px; /* Adjust image size as needed */
+    height: 180px; /* Maintain aspect ratio */
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+  .popup-image img:hover{
+    width: 300px;
+    height: 180px;
+  
+  }
+  .popup-content p{
+    font-size: 25px;
+    font-weight: 600;
+    color: #333;
+    margin-top: 15px;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 30px; /* Increase font size for better visibility */
+  }
+  
+  .close-btn:hover {
+    color: red;
+  }
+  
+  
+  /* success popup */
+  /* CSS for the success popup */
+  .success-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    width: 600px;
+    height: 460px;
+    z-index: 1000;
+    padding-top: 50px;
+    text-align: center;
+    border: none;
+  }
+  
+  .popup-complete .image-container {
+    margin-bottom: 20px;
+  }
+  
+  .success-popup img {
+    width: 50%;
+    height: 100%;
+    margin: 0 auto; /* Center the image horizontally */
+  }
+  
+  .success-popup p {
+    font-size: 30px;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  .success-popup a {
+    font-size: 15px;
+    color: #fff;
+    background-color:  #4651e4;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .success-popup a:hover{
+    font-size: 20px;
+    background: #5963f2;
+    color: #fff;
+    font-weight: 500;
+  }
+  
+  /* Unique styles for the shopping cart section */
+  #shopping-cart-wrapper {
+    max-height: 100%; /* Set a maximum height for the container */
+    overflow-y: auto; /* Enable vertical scroll if needed */
+    margin-right: 30px;
+  
+  
+  }
+  .cart-items {
+    max-height: 550px; /* Adjust this value as needed */
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin-bottom: 40px; /* Optional: add some space below */
+    padding-right: 15px; /* Avoid scrollbars blocking content */
+    }
+
+    /* Add padding to the cart items container for better spacing */
+    #shopping-cart {
+        padding-right: 15px; /* Avoid scrollbars blocking content */
+    }
+
+  #shopping-cart {
+      flex-wrap: wrap;
+      gap: 10px;
+  }
+  #shopping-cart .cart-item {
+      display: flex;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+  }
+  #shopping-cart .item-image {
+      width: 100px; /* Fixed width */
+      height: 100px; /* Fixed height */
+      margin-right: 20px;
+      border-radius: 5px;
+      object-fit: cover; /* Ensure the image covers the area without distortion */
+  }
+  #shopping-cart .item-info {
+      flex-grow: 1;
+  }
+  #shopping-cart .item-name {
+      font-size: 25px;
+      margin: 0 0 5px;
+      color: #333;
+  }
+  #shopping-cart .item-description {
+      color: #666;
+      margin-bottom: 10px;
+      font-size: 12px;
+      font-style: oblique;
+      font-weight: 400;
+  }
+  #shopping-cart .item-price {
+      color: #333;
+      margin-bottom: 5px;
+      font-weight: 600;
+  }
+  #shopping-cart .item-subtotal{
+    font-size: 14px;
+    font-weight: bold;
+    color: #1976D2;
+  }
+  #shopping-cart .quantity {
+      display: flex;
+      align-items: center;
+  }
+  #shopping-cart .quantity input[type="number"] {
+      width: 50px;
+      text-align: center;
+      font-size: 16px;
+      border: 1px solid #ddd;
+      border-radius: 2px;
+      padding: 5px;
+      margin-right: 5px;
+      margin-left: 5px;
+  }
+  #shopping-cart .quantity button {
+      background-color: #ddd;
+      border: none;
+      color: #666;
+      font-size: 18px;
+      cursor: pointer;
+      padding: 5px 10px;
+      border-radius: 3px;
+  }
+  #shopping-cart .quantity button:hover {
+      background-color: #ccc;
+  }
+  #shopping-cart .quantity .remove-btn {
+      margin-left: 20px;
+      background: lightcoral;
+      border: none;
+      padding: 5px 5px;
+      border-radius: 3px;
+      cursor: pointer;
+      color: white;
+      font-size: 15px;
+  }
+  #shopping-cart .quantity .remove-btn:hover {
+      background-color: #d63447;
+  }
+  
+/* Checkout summary */
+.checkout-summary {
+    flex: 0 0 30%;
+    background-color: #fdfdfd;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    font-family: Arial, sans-serif;
+}
+
+.checkout-summary h2 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.delivery-options {
+    margin-bottom: 30px;
+}
+
+.delivery-options label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.delivery-options .option-text {
+    font-size: 14px;
+    color: #000;
+}
+
+.delivery-options .option-details {
+    font-size: 11px;
+    color: #666;
+}
+
+.delivery-options .option-price {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+}
+
+.delivery-address h2 {
+    font-size: 20px;
+    color: royalblue;
+    margin-bottom: 15px;
+}
+
+.delivery-address h3 {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.delivery-address .current-address p {
+    font-size: 14px;
+    color: #777;
+}
+
+.subtotal {
+    font-size: 14px;
+    font-weight: 330;
+    color: #333;
+    margin-top: 3px;
+}
+.delivery-fee{
+    font-size: 14px;
+    font-weight: 330;
+    color: #333;
+    margin-top: 3px;
+}
+.total-amount{
+    color:#1976D2;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.check-out-btn button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(95, 246, 95);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.check-out-btn button:hover {
+    background-color: green;
+}
+    .change-address button{
+        margin-bottom: 15px;
+    }
+    /* Style for cancel and save buttons */
+    .change-address button:hover {
+      background-color: lightgray;
+      
+    }
+  
+ 
+/* Address Modal */
+.modal-content {
+    border-radius: 8px;
+}
+
+.modal-header {
+    background-color: #007bff;
+    color: white;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+    pointer-events: none; /* Allow interaction with the modal */
+}
+
+.modal {
+    z-index: 1050;
+}
+
+/* Shopping Cart Title */
+.shopping-cart-title {
+    margin: 40px auto;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    color: #1976D2;
+}
+
+@media (max-width: 768px) {
+    .shopping-cart-title {
+        font-size: 24px;
+        margin: 20px auto;
+    }
+}
+
+/* Cart Items */
+.cart-items {
+    max-height: 550px;
+    overflow-y: auto;
+    margin-bottom: 40px;
+    padding-right: 15px;
+}
+
+.cart-item {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+    align-items: center;
+}
+
+.item-image {
+    width: 100px; /* Fixed width */
+    height: 100px; /* Fixed height */
+    margin-right: 20px;
+    border-radius: 5px;
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+
+.item-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.item-name {
+    font-size: 20px;
+    margin: 0 0 5px;
+    color: #333;
+}
+
+.item-description {
+    color: #666;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-style: oblique;
+    font-weight: 400;
+}
+
+.item-price {
+    color: #333;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.item-subtotal {
+    font-size: 14px;
+    font-weight: bold;
+    color: #1976D2;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+}
+
+.quantity input[type="number"] {
+    width: 50px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    padding: 5px;
+    margin: 0 5px;
+}
+
+quantity button {
+    background-color: #ddd;
+    border: none;
+    color: #666;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+quantity button:hover {
+    background-color: #ccc;
+}
+
+quantity .remove-btn {
+    margin-left: 20px;
+    background: lightcoral;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    color: white;
+    font-size: 15px;
+}
+
+quantity .remove-btn:hover {
+    background-color: #d63447;
+}
+

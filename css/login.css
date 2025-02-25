@@ -1,0 +1,148 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #d8e6f0;
+  
+
+  }
+  .auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .auth-form {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+  }
+  .nav-tabs {
+    border-bottom: 3px solid #ddd;
+    margin-bottom: 25px;
+  }
+  .nav-link.active {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+  }
+  .form-control {
+    margin-bottom: 15px;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 16px;
+  }
+  .form-control:focus {
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+  }
+  .btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 5px;
+  }
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+    color: white;
+  }
+  .btn-success {
+    background-color: #28a745;
+    border: none;
+    color: white;
+  }
+  .auth-form p {
+    text-align: center;
+  }
+  .auth-form a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  .auth-form a:hover {
+    text-decoration: underline;
+  }
+  .error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+  /* New Responsive Design */
+  @media (max-width: 767px) {
+    .auth-form {
+      width: 90%;
+      padding: 20px;
+    }
+    .btn {
+      font-size: 16px;
+    }
+    .form-header {
+      font-size: 24px; /* Adjust header font size for smaller screens */
+    }
+    .form-logo {
+      width: 100%; /* Make logo responsive */
+      max-width: 300px; /* Limit max width */
+    }
+    .auth-container {
+      flex-direction: column; /* Stack header and form vertically */
+    }
+  }
+
+  .header-container{
+    margin-left: 10px;
+  }
+
+  /* Style for the header container */
+  .header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+  }
+
+  /* Style for the logo image */
+  .form-logo {
+    max-width: 500px;
+    height: auto;
+    margin-bottom: 20px; /* Space between logo and header */
+  }
+
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 767px) {
+    .header-container {
+      padding: 20px; /* Reduce padding for smaller screens */
+    }
+    .form-logo {
+      max-width: 300px; /* Reduce max width for smaller screens */
+      margin-bottom: 15px; /* Adjust space between logo and header */
+    }
+  }
+  /* Style for the header text */
+  .form-header {
+    font-family: 'Arial', sans-serif;
+    font-size: 20px; /* Large font for emphasis */
+    color: #333; /* Dark gray text */
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 767px) {
+    .form-header {
+      font-size: 18px; /* Adjust header font size for smaller screens */
+    }
+  }
+
+  /* Optional: Add responsive adjustments */
+  @media screen and (max-width: 768px) {
+    .form-header {
+      font-size: 28px; /* Adjust header font size for smaller screens */
+    }
+  }
